@@ -1,0 +1,1361 @@
+<html><head>
+<title>FFCS - Student Login</title>
+<meta http-equiv="PRAGMA" content="NO-CACHE">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<link href="fall2012-13_files/style2.css" rel="stylesheet" type="text/css">
+
+<script language="javascript"> 
+function toggle(i,no_cc) {
+	var ii=i;
+	var mno_cc=no_cc;
+	var ele = new Array(no_cc);
+	var diss = new Array(no_cc);
+	for(var i=0;i<=mno_cc;i++)
+	{
+	ele[i]=document.getElementById("toggleText"+i);
+	}
+	for(var j=0;j<=mno_cc;j++)
+	{
+//	diss[j]=document.getElementById("button"+j);
+	diss[j]="button"+j;
+	}
+	for(var x=0;x<=mno_cc;x++)
+	{
+	var bt=document.getElementById(diss[x]);
+	if (x != ii || bt.value=='Hide')
+	{
+	ele[x].style.display="none";
+	//var bt=document.getElementById(diss[x]);
+	bt.value="Show";
+	}
+	else
+	{
+	ele[ii].style.display="block";	
+	//var bt=document.getElementById(diss[x]);
+	bt.value="Hide";
+	}	
+  	  	}
+  	 
+  //var ele = document.getElementById(but_arr[ii]);
+	//var togglename="toggleText"+ii;
+	//var displayText="displayText"+ii;
+	//var co_button="button"+ii;
+	//var ele = document.getElementById(but_arr[ii]);
+	//var ele_button = document.getElementById(displayText);
+	//var text = document.getElementById(displayText);
+	//if(ele.style.display == "block") {
+    //	ele.style.display = "none";
+	//	
+	//	ele_button.value="Show";
+  	//}
+//else {
+//		ele.style.display = "block";
+//	   ele_button.value="Hide";
+	//}
+}
+</script>
+
+<script type="text/javascript">
+function popup(url) 
+{
+	params  = 'width=500';
+	params += ', height=500';
+	params += ', top=0, left=0'
+	params += ', fullscreen=no';
+	params += ', scrollbars=yes';
+
+	newwin=window.open(url,'ffcs', params);
+	
+	if (window.focus)
+	{
+		newwin.focus();
+	}
+	return false;
+	
+	//window.open (url, "mywindow","location=1,scrollbars=1,width=100,height=100");
+}
+</script>
+
+<script language="javascript">
+function call_sem()
+{
+	var sc = document.grade_arch.semcode.value;
+	self.location = "grade_arch.asp?sem="+ sc;
+}
+</script>
+
+</head>
+
+<body><table width="79%" border="0" height="350" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+	<td valign="top" width="1%" bgcolor="#FFFFFF">
+		&nbsp;
+	</td>
+	<td valign="top" width="78%" bgcolor="#FFFFFF">
+	
+	<br>
+	<center><b><u>ARCHIVES  -  GRADES</u></b></center>
+	<br>
+	
+	
+	
+	<form name="grade_arch">
+	<table style="border-collapse: collapse" width="600" border="1" bordercolor="#616D7E" height="100" cellpadding="3" cellspacing="0">
+		
+	<tbody><tr align="center" bgcolor="#616D7E" height="30">
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	
+	<tr>
+		<td width="140" bgcolor="#E6F2FF">
+			<font color="#000000"><b>Select Semester</b></font>
+		</td>
+		<td width="496">
+		
+			<select class="textbox" name="semcode" onchange="call_sem()">
+			<option value="">-- Select --</option>
+			<option value="INTSEM2014-15">Inter Semester 2014~15</option><option value="TRISEM2014-15">Tri Semester 2014~15</option><option value="FALLSEM2014-15">Fall Semester 2014~15</option><option value="SUMSEM2013-14">Summer Semester 2013~14</option><option value="WINSEM2013-14">Winter Semester 2013~14</option><option value="INTSEM2013-14">Inter Semester 2013~14</option><option value="TRISEM2013-14">Tri Semester 2013~14</option><option value="FALLSEM2013-14">Fall Semester 2013~14</option><option value="SUMSEM2012-13">Summer Semester 2012~13</option><option value="WINSEM2012-13">Winter Semester 2012~13</option><option value="FALLSEM2012-13" selected="selected">Fall Semester 2012~13</option><option value="SUMSEM2011-12">Summer Semester 2011~12</option><option value="WINSEM2011-12">Winter Semester 2011~12</option>
+			</select>
+			
+		</td>
+	</tr>
+		
+	<tr align="center" bgcolor="#616D7E" height="30">
+		<td colspan="2">&nbsp;</td>
+	</tr>
+		
+	</tbody></table>
+	</form>
+		
+		
+		<br>
+		<table style="border-collapse: collapse;" width="750" border="1" bordercolor="black" cellpadding="2" cellspacing="0">
+
+		<tbody><tr align="center" bgcolor="#5A768D" height="40">
+			<td width="40"><font color="#FFFFFF">Sl.No.</font></td>
+			<td width="70"><font color="#FFFFFF">Course<br>Code</font></td>
+			<td><font color="#FFFFFF">Course Title</font></td>
+			<td width="30"><font color="#FFFFFF">Course<br>Type</font></td>
+			<td width="50"><font color="#FFFFFF">L T P C</font></td>
+			<!--<td width="70" rowspan=2><font color=#FFFFFF>Course Mode</font></td>-->
+			<td width="50"><font color="#FFFFFF">Grading<br>Type</font></td>
+			<!--
+			<td rowspan=2><font color=#FFFFFF>Class Strength</font></td>
+			<td rowspan=2><font color=#FFFFFF>Grading Strength</font></td>
+			<td rowspan=2><font color=#FFFFFF>Mean (&#956;)</font></td>
+			<td rowspan=2><font color=#FFFFFF>SD (&#963;)</font></td>
+			<td colspan=7><font color=#FFFFFF>Range of Grades</font></td>
+			-->
+			<td><font color="#FFFFFF">Grand<br>Total</font></td>
+			<td><font color="#FFFFFF">Grade</font></td>
+			<td><font color="#FFFFFF">Detailed<br>View</font></td>
+		</tr>
+		<!--
+		<tr align=center bgcolor=#5A768D height="20">
+			<td><font color=#FFFFFF>S - with a min. of 90%</font></td>
+			<td><font color=#FFFFFF>A</font></td>
+			<td><font color=#FFFFFF>B</font></td>
+			<td><font color=#FFFFFF>C</font></td>
+			<td><font color=#FFFFFF>D</font></td>
+			<td><font color=#FFFFFF>E</font></td>
+			<td><font color=#FFFFFF>F</font></td>
+		</tr>
+			-->
+			
+			<tr align="center" bgcolor="#EDEADE" height="40">
+				<td>1</td><td>CHY104</td><td align="left">Environmental Studies</td><td width="50">Theory Only</td>
+				<td width="50">3 0 0 3</td>
+				<!--<td>CBL</td>-->
+				<td width="50">Relative</td>
+				<!--
+				 td>65</td>
+				<td>65</td><td>73.04</td><td>14.26</td><td>&ge; 94.00</td>
+				<td>&ge; 80.00  and  &lt; 94.00</td><td>&ge; 66.00  and  &lt; 80.00</td><td>&ge; 59.00  and  &lt; 66.00</td><td>&ge; 52.00  and  &lt; 59.00</td>
+				<td>&ge; 45.00  and  &lt; 52.00</td><td>&lt; 45.00</td>
+				-->
+				<td>77.00</td><td>B</td>
+				<td>
+					<input class="submit" value="Show" id="button0" onclick="javascript:toggle(0,6);" type="button">
+					<!--<center><a id="displayText0" href="javascript:toggle(0);">Show Grade</a></center>-->
+				</td>
+			</tr>
+			<tr>
+				<td colspan="40">
+				<div id="toggleText0" style="border: 0px solid black; padding: 5px; width: 725px; display: none;">
+				<table width="80%" border="0" height="350" cellpadding="0" cellspacing="0">
+				<tbody><tr><td valign="top" width="1%" bgcolor="#FFFFFF">&nbsp;</td><td valign="top" width="78%" bgcolor="#FFFFFF">
+				<center><b><u>DETAILED VIEW</u></b></center><br>
+		
+		
+					<b><u>CBL, Lab &amp; Project Courses:</u></b><br>
+
+						<br><table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+						<tbody><tr align="center" bgcolor="#5A768D" height="40">
+						<!--			<td width="40"><font color=#FFFFFF>Sl.No.</font></td>-->
+						<td width="47"><font color="#FFFFFF">Class <br>Nbr</font></td>
+						<td width="60"><font color="#FFFFFF">Course <br>Code</font></td>
+						<td><font color="#FFFFFF">Course Title</font></td>
+						<td width="70"><font color="#FFFFFF">Course <br>Type</font></td>
+						<td width="111"><font color="#FFFFFF">Faculty</font></td>
+						<!--			<td width="111"><font color=#FFFFFF>Faculty Option</font></td>-->
+		
+			</tr><tr align="center" bgcolor="#EDEADE">
+				<!--<td>1-->
+				<td>2521</td><td>CHY104</td>
+				<td>Environmental Studies</td><td>Theory Only</td>
+				<td>U. VIJAYALAKSHMI - SAS</td>
+<!--				<td>CBL</td>-->
+				
+			</tr>
+	</tbody></table><br>
+
+
+			<table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		    <tbody><tr align="center" bgcolor="#5A768D" height="40">
+			<td rowspan="2" width="40"><font color="#FFFFFF">Class<br>Strength</font></td>
+			<td rowspan="2" width="47"><font color="#FFFFFF">Grading<br>Strength</font></td>
+			<td rowspan="2"><font color="#FFFFFF">Mean (&#956;)</font></td>
+			<td rowspan="2"><font color="#FFFFFF">SD (&#963;)</font></td>
+			<td colspan="7"><font color="#FFFFFF">Range of Grades</font></td>
+			</tr><tr align="center" bgcolor="#5A768D" height="20">
+			<td width="70"><font color="#FFFFFF">S - with a<br>min. of 90%</font></td>
+			<td><font color="#FFFFFF">A</font></td>
+			<td><font color="#FFFFFF">B</font></td>
+			<td><font color="#FFFFFF">C</font></td>
+			<td><font color="#FFFFFF">D</font></td>
+			<td><font color="#FFFFFF">E</font></td>
+			<td><font color="#FFFFFF">F</font></td>
+		</tr>
+		
+		<tr align="center" bgcolor="#EDEADE">
+		<td>65</td>
+		<td>65</td><td>73.04</td><td>14.26</td><td width="50">&#8805; 94.00</td>
+		<td>&#8805; 80.00  and  &lt; 94.00</td><td>&#8805; 66.00  and  &lt; 80.00</td><td>&#8805; 59.00  and  &lt; 66.00</td><td>&#8805; 52.00  and  &lt; 59.00</td>
+		<td>&#8805; 45.00  and  &lt; 52.00</td><td>&lt; 45.00</td>
+
+		</tr>
+			
+			</tbody></table><br>
+			
+
+
+	
+	
+<table widht="700" style="border-collapse: collapse;" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		<tbody><tr bgcolor="#5A768D">
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-I<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-II<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-I</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-II</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-III</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Assignment<br>(Max. Mark 5)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Lab Internal<br>(Max. Mark 50)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Term End<br>Theory - 100)<br>(Lab - 50)</font></td>
+	</tr>
+	<tr bgcolor="#5A768D">
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+    	<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+	</tr>
+	<tr align="center" bgcolor="#EDEADE" height="20">
+
+	<td>Present</td><td>37.00</td><td>0.00</td><td>Present</td><td>36.00</td><td>0.00</td><td>Present</td><td>4.00</td><td>Present</td><td>4.00</td><td>Present</td><td>4.00</td><td>Present</td><td>5.00</td><td colspan="2">N/A</td><td>Present</td><td>75.50
+</td></tr></tbody></table>
+
+
+		<br>
+		<font color="red"><b>*Note:</b></font><br>
+		<b>"N/A"</b> ==&gt; Indicates Not Applicable.<br>
+		<b>"&nbsp;"</b> &nbsp;&nbsp;&nbsp;&nbsp; ==&gt; Indicate Marks Not Posted.<br>
+	
+		
+	<br><br>
+	
+	</td>
+  </tr>
+</tbody></table>
+</div>
+</td>
+</tr>
+		
+			<tr align="center" bgcolor="#EDEADE" height="40">
+				<td>2</td><td>CSE101</td><td align="left">Computer Programming and Problem Solving</td><td width="50">Embedded Theory &amp; Lab</td>
+				<td width="50">2 0 2 3</td>
+				<!--<td>CBL</td>-->
+				<td width="50">Relative</td>
+				<!--
+				 td>65</td>
+				<td>64</td><td>65.23</td><td>13.68</td><td>&ge; 90</td>
+				<td>&ge; 72.00  and  &lt; 86.00</td><td>&ge; 58.00  and  &lt; 72.00</td><td>&ge; 52.00  and  &lt; 58.00</td><td>&ge; 45.00  and  &lt; 52.00</td>
+				<td>&ge; 38.00  and  &lt; 45.00</td><td>&lt; 38.00</td>
+				-->
+				<td>79.00</td><td>A</td>
+				<td>
+					<input class="submit" value="Show" id="button1" onclick="javascript:toggle(1,6);" type="button">
+					<!--<center><a id="displayText1" href="javascript:toggle(1);">Show Grade</a></center>-->
+				</td>
+			</tr>
+			<tr>
+				<td colspan="40">
+				<div id="toggleText1" style="border: 0px solid black; padding: 5px; width: 725px; display: none;">
+				<table width="80%" border="0" height="350" cellpadding="0" cellspacing="0">
+				<tbody><tr><td valign="top" width="1%" bgcolor="#FFFFFF">&nbsp;</td><td valign="top" width="78%" bgcolor="#FFFFFF">
+				<center><b><u>DETAILED VIEW</u></b></center><br>
+		
+		
+					<b><u>CBL, Lab &amp; Project Courses:</u></b><br>
+
+						<br><table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+						<tbody><tr align="center" bgcolor="#5A768D" height="40">
+						<!--			<td width="40"><font color=#FFFFFF>Sl.No.</font></td>-->
+						<td width="47"><font color="#FFFFFF">Class <br>Nbr</font></td>
+						<td width="60"><font color="#FFFFFF">Course <br>Code</font></td>
+						<td><font color="#FFFFFF">Course Title</font></td>
+						<td width="70"><font color="#FFFFFF">Course <br>Type</font></td>
+						<td width="111"><font color="#FFFFFF">Faculty</font></td>
+						<!--			<td width="111"><font color=#FFFFFF>Faculty Option</font></td>-->
+		
+			</tr><tr align="center" bgcolor="#EDEADE">
+				<!--<td>1-->
+				<td>3074</td><td>CSE101</td>
+				<td>Computer Programming and Problem Solving</td><td>Embedded Theory</td>
+				<td>RAMESH BABU K - SCSE</td>
+<!--				<td>CBL</td>-->
+				
+			</tr>
+	</tbody></table><br>
+
+
+			<table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		    <tbody><tr align="center" bgcolor="#5A768D" height="40">
+			<td rowspan="2" width="40"><font color="#FFFFFF">Class<br>Strength</font></td>
+			<td rowspan="2" width="47"><font color="#FFFFFF">Grading<br>Strength</font></td>
+			<td rowspan="2"><font color="#FFFFFF">Mean (&#956;)</font></td>
+			<td rowspan="2"><font color="#FFFFFF">SD (&#963;)</font></td>
+			<td colspan="7"><font color="#FFFFFF">Range of Grades</font></td>
+			</tr><tr align="center" bgcolor="#5A768D" height="20">
+			<td width="70"><font color="#FFFFFF">S - with a<br>min. of 90%</font></td>
+			<td><font color="#FFFFFF">A</font></td>
+			<td><font color="#FFFFFF">B</font></td>
+			<td><font color="#FFFFFF">C</font></td>
+			<td><font color="#FFFFFF">D</font></td>
+			<td><font color="#FFFFFF">E</font></td>
+			<td><font color="#FFFFFF">F</font></td>
+		</tr>
+		
+		<tr align="center" bgcolor="#EDEADE">
+		<td>65</td>
+		<td>64</td><td>65.23</td><td>13.68</td><td width="50">&#8805; 90</td>
+		<td>&#8805; 72.00  and  &lt; 86.00</td><td>&#8805; 58.00  and  &lt; 72.00</td><td>&#8805; 52.00  and  &lt; 58.00</td><td>&#8805; 45.00  and  &lt; 52.00</td>
+		<td>&#8805; 38.00  and  &lt; 45.00</td><td>&lt; 38.00</td>
+
+		</tr>
+			
+			</tbody></table><br>
+			
+
+
+	
+	
+<table widht="700" style="border-collapse: collapse;" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		<tbody><tr bgcolor="#5A768D">
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-I<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-II<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-I</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-II</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-III</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Assignment<br>(Max. Mark 5)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Lab Internal<br>(Max. Mark 50)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Term End<br>Theory - 100)<br>(Lab - 50)</font></td>
+	</tr>
+	<tr bgcolor="#5A768D">
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+    	<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+	</tr>
+	<tr align="center" bgcolor="#EDEADE" height="20">
+
+	<td>Present</td><td>41.00</td><td>0.00</td><td>Present</td><td>30.00</td><td>0.00</td><td>Present</td><td>3.00</td><td>Present</td><td>3.00</td><td>Present</td><td>5.00</td><td>Present</td><td>3.00</td><td colspan="2">N/A</td><td>Present</td><td>74.00
+</td></tr></tbody></table>
+
+
+						<br><table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+						<tbody><tr align="center" bgcolor="#5A768D" height="40">
+						<!--			<td width="40"><font color=#FFFFFF>Sl.No.</font></td>-->
+						<td width="47"><font color="#FFFFFF">Class <br>Nbr</font></td>
+						<td width="60"><font color="#FFFFFF">Course <br>Code</font></td>
+						<td><font color="#FFFFFF">Course Title</font></td>
+						<td width="70"><font color="#FFFFFF">Course <br>Type</font></td>
+						<td width="111"><font color="#FFFFFF">Faculty</font></td>
+						<!--			<td width="111"><font color=#FFFFFF>Faculty Option</font></td>-->
+		
+			</tr><tr align="center" bgcolor="#EDEADE">
+				<!--<td>2-->
+				<td>3939</td><td>CSE101</td>
+				<td>Computer Programming and Problem Solving</td><td>Embedded Lab</td>
+				<td>SAIRABANU J - SCSE</td>
+<!--				<td>LBC</td>-->
+				
+			</tr>
+	</tbody></table><br>
+
+
+			<table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		    <tbody><tr align="center" bgcolor="#5A768D" height="40">
+			<td rowspan="2" width="40"><font color="#FFFFFF">Class<br>Strength</font></td>
+			<td rowspan="2" width="47"><font color="#FFFFFF">Grading<br>Strength</font></td>
+			<td rowspan="2"><font color="#FFFFFF">Mean (&#956;)</font></td>
+			<td rowspan="2"><font color="#FFFFFF">SD (&#963;)</font></td>
+			<td colspan="7"><font color="#FFFFFF">Range of Grades</font></td>
+			</tr><tr align="center" bgcolor="#5A768D" height="20">
+			<td width="70"><font color="#FFFFFF">S - with a<br>min. of 90%</font></td>
+			<td><font color="#FFFFFF">A</font></td>
+			<td><font color="#FFFFFF">B</font></td>
+			<td><font color="#FFFFFF">C</font></td>
+			<td><font color="#FFFFFF">D</font></td>
+			<td><font color="#FFFFFF">E</font></td>
+			<td><font color="#FFFFFF">F</font></td>
+		</tr>
+		
+		<tr align="center" bgcolor="#EDEADE">
+		<td>65</td>
+		<td>64</td><td>65.23</td><td>13.68</td><td width="50">&#8805; 90</td>
+		<td>&#8805; 72.00  and  &lt; 86.00</td><td>&#8805; 58.00  and  &lt; 72.00</td><td>&#8805; 52.00  and  &lt; 58.00</td><td>&#8805; 45.00  and  &lt; 52.00</td>
+		<td>&#8805; 38.00  and  &lt; 45.00</td><td>&lt; 38.00</td>
+
+		</tr>
+			
+			</tbody></table><br>
+			
+
+
+	
+	
+<table widht="700" style="border-collapse: collapse;" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		<tbody><tr bgcolor="#5A768D">
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-I<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-II<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-I</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-II</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-III</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Assignment<br>(Max. Mark 5)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Lab Internal<br>(Max. Mark 50)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Term End<br>Theory - 100)<br>(Lab - 50)</font></td>
+	</tr>
+	<tr bgcolor="#5A768D">
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+    	<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+	</tr>
+	<tr align="center" bgcolor="#EDEADE" height="20">
+
+	<td colspan="14" align="center">N/A</td><td>Present</td><td>48.00</td><td>Present</td><td>42.00
+</td></tr></tbody></table>
+
+
+		<br>
+		<font color="red"><b>*Note:</b></font><br>
+		<b>"N/A"</b> ==&gt; Indicates Not Applicable.<br>
+		<b>"&nbsp;"</b> &nbsp;&nbsp;&nbsp;&nbsp; ==&gt; Indicate Marks Not Posted.<br>
+	
+		
+	<br><br>
+	
+	</td>
+  </tr>
+</tbody></table>
+</div>
+</td>
+</tr>
+		
+			<tr align="center" bgcolor="#EDEADE" height="40">
+				<td>3</td><td>ECE102</td><td align="left">Fundamentals of Electrical Engineering</td><td width="50">Theory Only</td>
+				<td width="50">3 1 0 4</td>
+				<!--<td>CBL</td>-->
+				<td width="50">Relative</td>
+				<!--
+				 td>64</td>
+				<td>61</td><td>53.00</td><td>19.63</td><td>&ge; 90</td>
+				<td>&ge; 63.00  and  &lt; 82.00</td><td>&ge; 43.00  and  &lt; 63.00</td><td>&ge; 33.00  and  &lt; 43.00</td><td>&ge; 24.00  and  &lt; 33.00</td>
+				<td>&ge; 14.00  and  &lt; 24.00</td><td>&lt; 14.00</td>
+				-->
+				<td>72.00</td><td>A</td>
+				<td>
+					<input class="submit" value="Show" id="button2" onclick="javascript:toggle(2,6);" type="button">
+					<!--<center><a id="displayText2" href="javascript:toggle(2);">Show Grade</a></center>-->
+				</td>
+			</tr>
+			<tr>
+				<td colspan="40">
+				<div id="toggleText2" style="border: 0px solid black; padding: 5px; width: 725px; display: none;">
+				<table width="80%" border="0" height="350" cellpadding="0" cellspacing="0">
+				<tbody><tr><td valign="top" width="1%" bgcolor="#FFFFFF">&nbsp;</td><td valign="top" width="78%" bgcolor="#FFFFFF">
+				<center><b><u>DETAILED VIEW</u></b></center><br>
+		
+		
+					<b><u>CBL, Lab &amp; Project Courses:</u></b><br>
+
+						<br><table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+						<tbody><tr align="center" bgcolor="#5A768D" height="40">
+						<!--			<td width="40"><font color=#FFFFFF>Sl.No.</font></td>-->
+						<td width="47"><font color="#FFFFFF">Class <br>Nbr</font></td>
+						<td width="60"><font color="#FFFFFF">Course <br>Code</font></td>
+						<td><font color="#FFFFFF">Course Title</font></td>
+						<td width="70"><font color="#FFFFFF">Course <br>Type</font></td>
+						<td width="111"><font color="#FFFFFF">Faculty</font></td>
+						<!--			<td width="111"><font color=#FFFFFF>Faculty Option</font></td>-->
+		
+			</tr><tr align="center" bgcolor="#EDEADE">
+				<!--<td>1-->
+				<td>2942</td><td>ECE102</td>
+				<td>Fundamentals of Electrical Engineering</td><td>Theory Only</td>
+				<td>ARUNACHALAM V - SENSE</td>
+<!--				<td>CBL</td>-->
+				
+			</tr>
+	</tbody></table><br>
+
+
+			<table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		    <tbody><tr align="center" bgcolor="#5A768D" height="40">
+			<td rowspan="2" width="40"><font color="#FFFFFF">Class<br>Strength</font></td>
+			<td rowspan="2" width="47"><font color="#FFFFFF">Grading<br>Strength</font></td>
+			<td rowspan="2"><font color="#FFFFFF">Mean (&#956;)</font></td>
+			<td rowspan="2"><font color="#FFFFFF">SD (&#963;)</font></td>
+			<td colspan="7"><font color="#FFFFFF">Range of Grades</font></td>
+			</tr><tr align="center" bgcolor="#5A768D" height="20">
+			<td width="70"><font color="#FFFFFF">S - with a<br>min. of 90%</font></td>
+			<td><font color="#FFFFFF">A</font></td>
+			<td><font color="#FFFFFF">B</font></td>
+			<td><font color="#FFFFFF">C</font></td>
+			<td><font color="#FFFFFF">D</font></td>
+			<td><font color="#FFFFFF">E</font></td>
+			<td><font color="#FFFFFF">F</font></td>
+		</tr>
+		
+		<tr align="center" bgcolor="#EDEADE">
+		<td>64</td>
+		<td>61</td><td>53.00</td><td>19.63</td><td width="50">&#8805; 90</td>
+		<td>&#8805; 63.00  and  &lt; 82.00</td><td>&#8805; 43.00  and  &lt; 63.00</td><td>&#8805; 33.00  and  &lt; 43.00</td><td>&#8805; 24.00  and  &lt; 33.00</td>
+		<td>&#8805; 14.00  and  &lt; 24.00</td><td>&lt; 14.00</td>
+
+		</tr>
+			
+			</tbody></table><br>
+			
+
+
+	
+	
+<table widht="700" style="border-collapse: collapse;" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		<tbody><tr bgcolor="#5A768D">
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-I<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-II<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-I</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-II</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-III</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Assignment<br>(Max. Mark 5)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Lab Internal<br>(Max. Mark 50)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Term End<br>Theory - 100)<br>(Lab - 50)</font></td>
+	</tr>
+	<tr bgcolor="#5A768D">
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+    	<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+	</tr>
+	<tr align="center" bgcolor="#EDEADE" height="20">
+
+	<td>Present</td><td>36.00</td><td>0.00</td><td>Present</td><td>41.00</td><td>0.00</td><td>Present</td><td>5.00</td><td>Present</td><td>5.00</td><td>Present</td><td>5.00</td><td>Present</td><td>5.00</td><td colspan="2">N/A</td><td>Present</td><td>56.00
+</td></tr></tbody></table>
+
+
+		<br>
+		<font color="red"><b>*Note:</b></font><br>
+		<b>"N/A"</b> ==&gt; Indicates Not Applicable.<br>
+		<b>"&nbsp;"</b> &nbsp;&nbsp;&nbsp;&nbsp; ==&gt; Indicate Marks Not Posted.<br>
+	
+		
+	<br><br>
+	
+	</td>
+  </tr>
+</tbody></table>
+</div>
+</td>
+</tr>
+		
+			<tr align="center" bgcolor="#EDEADE" height="40">
+				<td>4</td><td>ENG101</td><td align="left">English for Engineers I</td><td width="50">Embedded Theory &amp; Lab</td>
+				<td width="50">2 0 2 3</td>
+				<!--<td>CBL</td>-->
+				<td width="50">Relative</td>
+				<!--
+				 td>60</td>
+				<td>60</td><td>72.30</td><td>4.88</td><td>&ge; 90</td>
+				<td>&ge; 75.00  and  &lt; 80.00</td><td>&ge; 70.00  and  &lt; 75.00</td><td>&ge; 67.00  and  &lt; 70.00</td><td>&ge; 65.00  and  &lt; 67.00</td>
+				<td>&ge; 50.00  and  &lt; 65.00</td><td>&lt; 50.00</td>
+				-->
+				<td>65.00</td><td>D</td>
+				<td>
+					<input class="submit" value="Show" id="button3" onclick="javascript:toggle(3,6);" type="button">
+					<!--<center><a id="displayText3" href="javascript:toggle(3);">Show Grade</a></center>-->
+				</td>
+			</tr>
+			<tr>
+				<td colspan="40">
+				<div id="toggleText3" style="border: 0px solid black; padding: 5px; width: 725px; display: none;">
+				<table width="80%" border="0" height="350" cellpadding="0" cellspacing="0">
+				<tbody><tr><td valign="top" width="1%" bgcolor="#FFFFFF">&nbsp;</td><td valign="top" width="78%" bgcolor="#FFFFFF">
+				<center><b><u>DETAILED VIEW</u></b></center><br>
+		
+		
+					<b><u>CBL, Lab &amp; Project Courses:</u></b><br>
+
+						<br><table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+						<tbody><tr align="center" bgcolor="#5A768D" height="40">
+						<!--			<td width="40"><font color=#FFFFFF>Sl.No.</font></td>-->
+						<td width="47"><font color="#FFFFFF">Class <br>Nbr</font></td>
+						<td width="60"><font color="#FFFFFF">Course <br>Code</font></td>
+						<td><font color="#FFFFFF">Course Title</font></td>
+						<td width="70"><font color="#FFFFFF">Course <br>Type</font></td>
+						<td width="111"><font color="#FFFFFF">Faculty</font></td>
+						<!--			<td width="111"><font color=#FFFFFF>Faculty Option</font></td>-->
+		
+			</tr><tr align="center" bgcolor="#EDEADE">
+				<!--<td>1-->
+				<td>2762</td><td>ENG101</td>
+				<td>English for Engineers I</td><td>Embedded Theory</td>
+				<td>RAMANI N - SSL</td>
+<!--				<td>CBL</td>-->
+				
+			</tr>
+	</tbody></table><br>
+
+
+			<table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		    <tbody><tr align="center" bgcolor="#5A768D" height="40">
+			<td rowspan="2" width="40"><font color="#FFFFFF">Class<br>Strength</font></td>
+			<td rowspan="2" width="47"><font color="#FFFFFF">Grading<br>Strength</font></td>
+			<td rowspan="2"><font color="#FFFFFF">Mean (&#956;)</font></td>
+			<td rowspan="2"><font color="#FFFFFF">SD (&#963;)</font></td>
+			<td colspan="7"><font color="#FFFFFF">Range of Grades</font></td>
+			</tr><tr align="center" bgcolor="#5A768D" height="20">
+			<td width="70"><font color="#FFFFFF">S - with a<br>min. of 90%</font></td>
+			<td><font color="#FFFFFF">A</font></td>
+			<td><font color="#FFFFFF">B</font></td>
+			<td><font color="#FFFFFF">C</font></td>
+			<td><font color="#FFFFFF">D</font></td>
+			<td><font color="#FFFFFF">E</font></td>
+			<td><font color="#FFFFFF">F</font></td>
+		</tr>
+		
+		<tr align="center" bgcolor="#EDEADE">
+		<td>60</td>
+		<td>60</td><td>72.30</td><td>4.88</td><td width="50">&#8805; 90</td>
+		<td>&#8805; 75.00  and  &lt; 80.00</td><td>&#8805; 70.00  and  &lt; 75.00</td><td>&#8805; 67.00  and  &lt; 70.00</td><td>&#8805; 65.00  and  &lt; 67.00</td>
+		<td>&#8805; 50.00  and  &lt; 65.00</td><td>&lt; 50.00</td>
+
+		</tr>
+			
+			</tbody></table><br>
+			
+
+
+	
+	
+<table widht="700" style="border-collapse: collapse;" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		<tbody><tr bgcolor="#5A768D">
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-I<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-II<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-I</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-II</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-III</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Assignment<br>(Max. Mark 5)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Lab Internal<br>(Max. Mark 50)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Term End<br>Theory - 100)<br>(Lab - 50)</font></td>
+	</tr>
+	<tr bgcolor="#5A768D">
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+    	<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+	</tr>
+	<tr align="center" bgcolor="#EDEADE" height="20">
+
+	<td>Present</td><td>30.00</td><td>0.00</td><td>Present</td><td>37.00</td><td>0.00</td><td>Present</td><td>3.00</td><td>Present</td><td>4.00</td><td>Present</td><td>4.00</td><td>Present</td><td>3.00</td><td colspan="2">N/A</td><td>Present</td><td>52.00
+</td></tr></tbody></table>
+
+
+						<br><table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+						<tbody><tr align="center" bgcolor="#5A768D" height="40">
+						<!--			<td width="40"><font color=#FFFFFF>Sl.No.</font></td>-->
+						<td width="47"><font color="#FFFFFF">Class <br>Nbr</font></td>
+						<td width="60"><font color="#FFFFFF">Course <br>Code</font></td>
+						<td><font color="#FFFFFF">Course Title</font></td>
+						<td width="70"><font color="#FFFFFF">Course <br>Type</font></td>
+						<td width="111"><font color="#FFFFFF">Faculty</font></td>
+						<!--			<td width="111"><font color=#FFFFFF>Faculty Option</font></td>-->
+		
+			</tr><tr align="center" bgcolor="#EDEADE">
+				<!--<td>2-->
+				<td>5232</td><td>ENG101</td>
+				<td>English for Engineers I</td><td>Embedded Lab</td>
+				<td>MD. SAHUL HAMEED M A - SSL</td>
+<!--				<td>LBC</td>-->
+				
+			</tr>
+	</tbody></table><br>
+
+
+			<table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		    <tbody><tr align="center" bgcolor="#5A768D" height="40">
+			<td rowspan="2" width="40"><font color="#FFFFFF">Class<br>Strength</font></td>
+			<td rowspan="2" width="47"><font color="#FFFFFF">Grading<br>Strength</font></td>
+			<td rowspan="2"><font color="#FFFFFF">Mean (&#956;)</font></td>
+			<td rowspan="2"><font color="#FFFFFF">SD (&#963;)</font></td>
+			<td colspan="7"><font color="#FFFFFF">Range of Grades</font></td>
+			</tr><tr align="center" bgcolor="#5A768D" height="20">
+			<td width="70"><font color="#FFFFFF">S - with a<br>min. of 90%</font></td>
+			<td><font color="#FFFFFF">A</font></td>
+			<td><font color="#FFFFFF">B</font></td>
+			<td><font color="#FFFFFF">C</font></td>
+			<td><font color="#FFFFFF">D</font></td>
+			<td><font color="#FFFFFF">E</font></td>
+			<td><font color="#FFFFFF">F</font></td>
+		</tr>
+		
+		<tr align="center" bgcolor="#EDEADE">
+		<td>60</td>
+		<td>60</td><td>72.30</td><td>4.88</td><td width="50">&#8805; 90</td>
+		<td>&#8805; 75.00  and  &lt; 80.00</td><td>&#8805; 70.00  and  &lt; 75.00</td><td>&#8805; 67.00  and  &lt; 70.00</td><td>&#8805; 65.00  and  &lt; 67.00</td>
+		<td>&#8805; 50.00  and  &lt; 65.00</td><td>&lt; 50.00</td>
+
+		</tr>
+			
+			</tbody></table><br>
+			
+
+
+	
+	
+<table widht="700" style="border-collapse: collapse;" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		<tbody><tr bgcolor="#5A768D">
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-I<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-II<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-I</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-II</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-III</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Assignment<br>(Max. Mark 5)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Lab Internal<br>(Max. Mark 50)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Term End<br>Theory - 100)<br>(Lab - 50)</font></td>
+	</tr>
+	<tr bgcolor="#5A768D">
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+    	<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+	</tr>
+	<tr align="center" bgcolor="#EDEADE" height="20">
+
+	<td colspan="14" align="center">N/A</td><td>Present</td><td>40.00</td><td>Present</td><td>34.00
+</td></tr></tbody></table>
+
+
+		<br>
+		<font color="red"><b>*Note:</b></font><br>
+		<b>"N/A"</b> ==&gt; Indicates Not Applicable.<br>
+		<b>"&nbsp;"</b> &nbsp;&nbsp;&nbsp;&nbsp; ==&gt; Indicate Marks Not Posted.<br>
+	
+		
+	<br><br>
+	
+	</td>
+  </tr>
+</tbody></table>
+</div>
+</td>
+</tr>
+		
+			<tr align="center" bgcolor="#EDEADE" height="40">
+				<td>5</td><td>MAT101</td><td align="left">Multivariable Calculus and Differential Equations</td><td width="50">Theory Only</td>
+				<td width="50">3 1 0 4</td>
+				<!--<td>CBL</td>-->
+				<td width="50">Relative</td>
+				<!--
+				 td>63</td>
+				<td>62</td><td>70.95</td><td>22.00</td><td>&ge; 98.00</td>
+				<td>&ge; 82.00  and  &lt; 98.00</td><td>&ge; 60.00  and  &lt; 82.00</td><td>&ge; 49.00  and  &lt; 60.00</td><td>&ge; 38.00  and  &lt; 49.00</td>
+				<td>&ge; 27.00  and  &lt; 38.00</td><td>&lt; 27.00</td>
+				-->
+				<td>88.00</td><td>A</td>
+				<td>
+					<input class="submit" value="Show" id="button4" onclick="javascript:toggle(4,6);" type="button">
+					<!--<center><a id="displayText4" href="javascript:toggle(4);">Show Grade</a></center>-->
+				</td>
+			</tr>
+			<tr>
+				<td colspan="40">
+				<div id="toggleText4" style="border: 0px solid black; padding: 5px; width: 725px; display: none;">
+				<table width="80%" border="0" height="350" cellpadding="0" cellspacing="0">
+				<tbody><tr><td valign="top" width="1%" bgcolor="#FFFFFF">&nbsp;</td><td valign="top" width="78%" bgcolor="#FFFFFF">
+				<center><b><u>DETAILED VIEW</u></b></center><br>
+		
+		
+					<b><u>CBL, Lab &amp; Project Courses:</u></b><br>
+
+						<br><table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+						<tbody><tr align="center" bgcolor="#5A768D" height="40">
+						<!--			<td width="40"><font color=#FFFFFF>Sl.No.</font></td>-->
+						<td width="47"><font color="#FFFFFF">Class <br>Nbr</font></td>
+						<td width="60"><font color="#FFFFFF">Course <br>Code</font></td>
+						<td><font color="#FFFFFF">Course Title</font></td>
+						<td width="70"><font color="#FFFFFF">Course <br>Type</font></td>
+						<td width="111"><font color="#FFFFFF">Faculty</font></td>
+						<!--			<td width="111"><font color=#FFFFFF>Faculty Option</font></td>-->
+		
+			</tr><tr align="center" bgcolor="#EDEADE">
+				<!--<td>1-->
+				<td>5413</td><td>MAT101</td>
+				<td>Multivariable Calculus and Differential Equations</td><td>Theory Only</td>
+				<td>KALAIMURUGAN G - SAS</td>
+<!--				<td>CBL</td>-->
+				
+			</tr>
+	</tbody></table><br>
+
+
+			<table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		    <tbody><tr align="center" bgcolor="#5A768D" height="40">
+			<td rowspan="2" width="40"><font color="#FFFFFF">Class<br>Strength</font></td>
+			<td rowspan="2" width="47"><font color="#FFFFFF">Grading<br>Strength</font></td>
+			<td rowspan="2"><font color="#FFFFFF">Mean (&#956;)</font></td>
+			<td rowspan="2"><font color="#FFFFFF">SD (&#963;)</font></td>
+			<td colspan="7"><font color="#FFFFFF">Range of Grades</font></td>
+			</tr><tr align="center" bgcolor="#5A768D" height="20">
+			<td width="70"><font color="#FFFFFF">S - with a<br>min. of 90%</font></td>
+			<td><font color="#FFFFFF">A</font></td>
+			<td><font color="#FFFFFF">B</font></td>
+			<td><font color="#FFFFFF">C</font></td>
+			<td><font color="#FFFFFF">D</font></td>
+			<td><font color="#FFFFFF">E</font></td>
+			<td><font color="#FFFFFF">F</font></td>
+		</tr>
+		
+		<tr align="center" bgcolor="#EDEADE">
+		<td>63</td>
+		<td>62</td><td>70.95</td><td>22.00</td><td width="50">&#8805; 98.00</td>
+		<td>&#8805; 82.00  and  &lt; 98.00</td><td>&#8805; 60.00  and  &lt; 82.00</td><td>&#8805; 49.00  and  &lt; 60.00</td><td>&#8805; 38.00  and  &lt; 49.00</td>
+		<td>&#8805; 27.00  and  &lt; 38.00</td><td>&lt; 27.00</td>
+
+		</tr>
+			
+			</tbody></table><br>
+			
+
+
+	
+	
+<table widht="700" style="border-collapse: collapse;" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		<tbody><tr bgcolor="#5A768D">
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-I<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-II<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-I</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-II</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-III</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Assignment<br>(Max. Mark 5)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Lab Internal<br>(Max. Mark 50)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Term End<br>Theory - 100)<br>(Lab - 50)</font></td>
+	</tr>
+	<tr bgcolor="#5A768D">
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+    	<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+	</tr>
+	<tr align="center" bgcolor="#EDEADE" height="20">
+
+	<td>Present</td><td>44.00</td><td>0.00</td><td>Present</td><td>50.00</td><td>0.00</td><td>Present</td><td>4.50</td><td>Present</td><td>5.00</td><td>Present</td><td>5.00</td><td>Present</td><td>5.00</td><td colspan="2">N/A</td><td>Present</td><td>79.00
+</td></tr></tbody></table>
+
+
+		<br>
+		<font color="red"><b>*Note:</b></font><br>
+		<b>"N/A"</b> ==&gt; Indicates Not Applicable.<br>
+		<b>"&nbsp;"</b> &nbsp;&nbsp;&nbsp;&nbsp; ==&gt; Indicate Marks Not Posted.<br>
+	
+		
+	<br><br>
+	
+	</td>
+  </tr>
+</tbody></table>
+</div>
+</td>
+</tr>
+		
+			<tr align="center" bgcolor="#EDEADE" height="40">
+				<td>6</td><td>MEE102</td><td align="left">Workshop Practice</td><td width="50">Lab Only</td>
+				<td width="50">0 0 2 1</td>
+				<!--<td>LBC</td>-->
+				<td width="50">Absolute</td>
+				<!--
+				 td>64</td>
+				<td>64</td><td>N/A</td><td>N/A</td><td>&ge; 90.00</td>
+				<td>&ge; 80.00  and  &lt; 90.00</td><td>&ge; 70.00  and  &lt; 80.00</td><td>&ge; 60.00  and  &lt; 70.00</td><td>&ge; 55.00  and  &lt; 60.00</td>
+				<td>&ge; 50.00  and  &lt; 55.00</td><td>&lt; 50.00</td>
+				-->
+				<td>87.00</td><td>A</td>
+				<td>
+					<input class="submit" value="Show" id="button5" onclick="javascript:toggle(5,6);" type="button">
+					<!--<center><a id="displayText5" href="javascript:toggle(5);">Show Grade</a></center>-->
+				</td>
+			</tr>
+			<tr>
+				<td colspan="40">
+				<div id="toggleText5" style="border: 0px solid black; padding: 5px; width: 725px; display: none;">
+				<table width="80%" border="0" height="350" cellpadding="0" cellspacing="0">
+				<tbody><tr><td valign="top" width="1%" bgcolor="#FFFFFF">&nbsp;</td><td valign="top" width="78%" bgcolor="#FFFFFF">
+				<center><b><u>DETAILED VIEW</u></b></center><br>
+		
+		
+					<b><u>CBL, Lab &amp; Project Courses:</u></b><br>
+
+						<br><table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+						<tbody><tr align="center" bgcolor="#5A768D" height="40">
+						<!--			<td width="40"><font color=#FFFFFF>Sl.No.</font></td>-->
+						<td width="47"><font color="#FFFFFF">Class <br>Nbr</font></td>
+						<td width="60"><font color="#FFFFFF">Course <br>Code</font></td>
+						<td><font color="#FFFFFF">Course Title</font></td>
+						<td width="70"><font color="#FFFFFF">Course <br>Type</font></td>
+						<td width="111"><font color="#FFFFFF">Faculty</font></td>
+						<!--			<td width="111"><font color=#FFFFFF>Faculty Option</font></td>-->
+		
+			</tr><tr align="center" bgcolor="#EDEADE">
+				<!--<td>1-->
+				<td>1600</td><td>MEE102</td>
+				<td>Workshop Practice</td><td>Lab Only</td>
+				<td>SATHISH KUMAR S - SMBS</td>
+<!--				<td>LBC</td>-->
+				
+			</tr>
+	</tbody></table><br>
+
+
+			<table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		    <tbody><tr align="center" bgcolor="#5A768D" height="40">
+			<td rowspan="2" width="40"><font color="#FFFFFF">Class<br>Strength</font></td>
+			<td rowspan="2" width="47"><font color="#FFFFFF">Grading<br>Strength</font></td>
+			<td rowspan="2"><font color="#FFFFFF">Mean (&#956;)</font></td>
+			<td rowspan="2"><font color="#FFFFFF">SD (&#963;)</font></td>
+			<td colspan="7"><font color="#FFFFFF">Range of Grades</font></td>
+			</tr><tr align="center" bgcolor="#5A768D" height="20">
+			<td width="70"><font color="#FFFFFF">S - with a<br>min. of 90%</font></td>
+			<td><font color="#FFFFFF">A</font></td>
+			<td><font color="#FFFFFF">B</font></td>
+			<td><font color="#FFFFFF">C</font></td>
+			<td><font color="#FFFFFF">D</font></td>
+			<td><font color="#FFFFFF">E</font></td>
+			<td><font color="#FFFFFF">F</font></td>
+		</tr>
+		
+		<tr align="center" bgcolor="#EDEADE">
+		<td>64</td>
+		<td>64</td><td>N/A</td><td>N/A</td><td width="50">&#8805; 90.00</td>
+		<td>&#8805; 80.00  and  &lt; 90.00</td><td>&#8805; 70.00  and  &lt; 80.00</td><td>&#8805; 60.00  and  &lt; 70.00</td><td>&#8805; 55.00  and  &lt; 60.00</td>
+		<td>&#8805; 50.00  and  &lt; 55.00</td><td>&lt; 50.00</td>
+
+		</tr>
+			
+			</tbody></table><br>
+			
+
+
+	
+	
+<table widht="700" style="border-collapse: collapse;" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		<tbody><tr bgcolor="#5A768D">
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-I<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-II<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-I</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-II</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-III</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Assignment<br>(Max. Mark 5)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Lab Internal<br>(Max. Mark 50)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Term End<br>Theory - 100)<br>(Lab - 50)</font></td>
+	</tr>
+	<tr bgcolor="#5A768D">
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+    	<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+	</tr>
+	<tr align="center" bgcolor="#EDEADE" height="20">
+
+	<td colspan="14" align="center">N/A</td><td>Present</td><td>43.00</td><td>Present</td><td>43.50
+</td></tr></tbody></table>
+
+
+		<br>
+		<font color="red"><b>*Note:</b></font><br>
+		<b>"N/A"</b> ==&gt; Indicates Not Applicable.<br>
+		<b>"&nbsp;"</b> &nbsp;&nbsp;&nbsp;&nbsp; ==&gt; Indicate Marks Not Posted.<br>
+	
+		
+	<br><br>
+	
+	</td>
+  </tr>
+</tbody></table>
+</div>
+</td>
+</tr>
+		
+			<tr align="center" bgcolor="#EDEADE" height="40">
+				<td>7</td><td>PHY101</td><td align="left">Modern Physics</td><td width="50">Embedded Theory &amp; Lab</td>
+				<td width="50">3 0 2 4</td>
+				<!--<td>CBL</td>-->
+				<td width="50">Relative</td>
+				<!--
+				 td>64</td>
+				<td>64</td><td>84.26</td><td>10.60</td><td>&ge; 100.00</td>
+				<td>&ge; 90.00  and  &lt; 100.00</td><td>&ge; 79.00  and  &lt; 90.00</td><td>&ge; 74.00  and  &lt; 79.00</td><td>&ge; 68.00  and  &lt; 74.00</td>
+				<td>&ge; 50.00  and  &lt; 68.00</td><td>&lt; 50.00</td>
+				-->
+				<td>92.00</td><td>A</td>
+				<td>
+					<input class="submit" value="Show" id="button6" onclick="javascript:toggle(6,6);" type="button">
+					<!--<center><a id="displayText6" href="javascript:toggle(6);">Show Grade</a></center>-->
+				</td>
+			</tr>
+			<tr>
+				<td colspan="40">
+				<div id="toggleText6" style="border: 0px solid black; padding: 5px; width: 725px; display: none;">
+				<table width="80%" border="0" height="350" cellpadding="0" cellspacing="0">
+				<tbody><tr><td valign="top" width="1%" bgcolor="#FFFFFF">&nbsp;</td><td valign="top" width="78%" bgcolor="#FFFFFF">
+				<center><b><u>DETAILED VIEW</u></b></center><br>
+		
+		
+					<b><u>CBL, Lab &amp; Project Courses:</u></b><br>
+
+						<br><table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+						<tbody><tr align="center" bgcolor="#5A768D" height="40">
+						<!--			<td width="40"><font color=#FFFFFF>Sl.No.</font></td>-->
+						<td width="47"><font color="#FFFFFF">Class <br>Nbr</font></td>
+						<td width="60"><font color="#FFFFFF">Course <br>Code</font></td>
+						<td><font color="#FFFFFF">Course Title</font></td>
+						<td width="70"><font color="#FFFFFF">Course <br>Type</font></td>
+						<td width="111"><font color="#FFFFFF">Faculty</font></td>
+						<!--			<td width="111"><font color=#FFFFFF>Faculty Option</font></td>-->
+		
+			</tr><tr align="center" bgcolor="#EDEADE">
+				<!--<td>1-->
+				<td>3017</td><td>PHY101</td>
+				<td>Modern Physics</td><td>Embedded Theory</td>
+				<td>VIJAYA CHAMUNDEESWARI S P - SAS</td>
+<!--				<td>CBL</td>-->
+				
+			</tr>
+	</tbody></table><br>
+
+
+			<table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		    <tbody><tr align="center" bgcolor="#5A768D" height="40">
+			<td rowspan="2" width="40"><font color="#FFFFFF">Class<br>Strength</font></td>
+			<td rowspan="2" width="47"><font color="#FFFFFF">Grading<br>Strength</font></td>
+			<td rowspan="2"><font color="#FFFFFF">Mean (&#956;)</font></td>
+			<td rowspan="2"><font color="#FFFFFF">SD (&#963;)</font></td>
+			<td colspan="7"><font color="#FFFFFF">Range of Grades</font></td>
+			</tr><tr align="center" bgcolor="#5A768D" height="20">
+			<td width="70"><font color="#FFFFFF">S - with a<br>min. of 90%</font></td>
+			<td><font color="#FFFFFF">A</font></td>
+			<td><font color="#FFFFFF">B</font></td>
+			<td><font color="#FFFFFF">C</font></td>
+			<td><font color="#FFFFFF">D</font></td>
+			<td><font color="#FFFFFF">E</font></td>
+			<td><font color="#FFFFFF">F</font></td>
+		</tr>
+		
+		<tr align="center" bgcolor="#EDEADE">
+		<td>64</td>
+		<td>64</td><td>84.26</td><td>10.60</td><td width="50">&#8805; 100.00</td>
+		<td>&#8805; 90.00  and  &lt; 100.00</td><td>&#8805; 79.00  and  &lt; 90.00</td><td>&#8805; 74.00  and  &lt; 79.00</td><td>&#8805; 68.00  and  &lt; 74.00</td>
+		<td>&#8805; 50.00  and  &lt; 68.00</td><td>&lt; 50.00</td>
+
+		</tr>
+			
+			</tbody></table><br>
+			
+
+
+	
+	
+<table widht="700" style="border-collapse: collapse;" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		<tbody><tr bgcolor="#5A768D">
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-I<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-II<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-I</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-II</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-III</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Assignment<br>(Max. Mark 5)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Lab Internal<br>(Max. Mark 50)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Term End<br>Theory - 100)<br>(Lab - 50)</font></td>
+	</tr>
+	<tr bgcolor="#5A768D">
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+    	<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+	</tr>
+	<tr align="center" bgcolor="#EDEADE" height="20">
+
+	<td>Present</td><td>45.00</td><td>0.00</td><td>Present</td><td>50.00</td><td>0.00</td><td>Present</td><td>5.00</td><td>Present</td><td>4.00</td><td>Present</td><td>4.00</td><td>Present</td><td>5.00</td><td colspan="2">N/A</td><td>Present</td><td>93.00
+</td></tr></tbody></table>
+
+
+						<br><table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+						<tbody><tr align="center" bgcolor="#5A768D" height="40">
+						<!--			<td width="40"><font color=#FFFFFF>Sl.No.</font></td>-->
+						<td width="47"><font color="#FFFFFF">Class <br>Nbr</font></td>
+						<td width="60"><font color="#FFFFFF">Course <br>Code</font></td>
+						<td><font color="#FFFFFF">Course Title</font></td>
+						<td width="70"><font color="#FFFFFF">Course <br>Type</font></td>
+						<td width="111"><font color="#FFFFFF">Faculty</font></td>
+						<!--			<td width="111"><font color=#FFFFFF>Faculty Option</font></td>-->
+		
+			</tr><tr align="center" bgcolor="#EDEADE">
+				<!--<td>2-->
+				<td>3502</td><td>PHY101</td>
+				<td>Modern Physics</td><td>Embedded Lab</td>
+				<td>VIJAYA CHAMUNDEESWARI S P - SAS</td>
+<!--				<td>LBC</td>-->
+				
+			</tr>
+	</tbody></table><br>
+
+
+			<table style="border-collapse: collapse;" width="700" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		    <tbody><tr align="center" bgcolor="#5A768D" height="40">
+			<td rowspan="2" width="40"><font color="#FFFFFF">Class<br>Strength</font></td>
+			<td rowspan="2" width="47"><font color="#FFFFFF">Grading<br>Strength</font></td>
+			<td rowspan="2"><font color="#FFFFFF">Mean (&#956;)</font></td>
+			<td rowspan="2"><font color="#FFFFFF">SD (&#963;)</font></td>
+			<td colspan="7"><font color="#FFFFFF">Range of Grades</font></td>
+			</tr><tr align="center" bgcolor="#5A768D" height="20">
+			<td width="70"><font color="#FFFFFF">S - with a<br>min. of 90%</font></td>
+			<td><font color="#FFFFFF">A</font></td>
+			<td><font color="#FFFFFF">B</font></td>
+			<td><font color="#FFFFFF">C</font></td>
+			<td><font color="#FFFFFF">D</font></td>
+			<td><font color="#FFFFFF">E</font></td>
+			<td><font color="#FFFFFF">F</font></td>
+		</tr>
+		
+		<tr align="center" bgcolor="#EDEADE">
+		<td>64</td>
+		<td>64</td><td>84.26</td><td>10.60</td><td width="50">&#8805; 100.00</td>
+		<td>&#8805; 90.00  and  &lt; 100.00</td><td>&#8805; 79.00  and  &lt; 90.00</td><td>&#8805; 74.00  and  &lt; 79.00</td><td>&#8805; 68.00  and  &lt; 74.00</td>
+		<td>&#8805; 50.00  and  &lt; 68.00</td><td>&lt; 50.00</td>
+
+		</tr>
+			
+			</tbody></table><br>
+			
+
+
+	
+	
+<table widht="700" style="border-collapse: collapse;" border="1" bordercolor="black" cellpadding="1" cellspacing="0">
+		<tbody><tr bgcolor="#5A768D">
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-I<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="3" align="center"><font color="#FFFFFF">CAT-II<br>(Max. Mark 50)<br>(Peer Max. Mark 10)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-I</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-II</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Quiz-III</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Assignment<br>(Max. Mark 5)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Lab Internal<br>(Max. Mark 50)</font></td>
+		<td colspan="2" align="center"><font color="#FFFFFF">Term End<br>Theory - 100)<br>(Lab - 50)</font></td>
+	</tr>
+	<tr bgcolor="#5A768D">
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td><font color="#FFFFFF">Status</font></td>
+		<td><font color="#FFFFFF">Scored<br>Mark</font></td>
+		<td><font color="#FFFFFF">Peer<br>Tutoring<br>Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+    	<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+		<td align="center"><font color="#FFFFFF">Status</font></td>
+		<td align="center"><font color="#FFFFFF">Mark</font></td>
+	</tr>
+	<tr align="center" bgcolor="#EDEADE" height="20">
+
+	<td colspan="14" align="center">N/A</td><td>Present</td><td>47.70</td><td>Present</td><td>39.00
+</td></tr></tbody></table>
+
+
+		<br>
+		<font color="red"><b>*Note:</b></font><br>
+		<b>"N/A"</b> ==&gt; Indicates Not Applicable.<br>
+		<b>"&nbsp;"</b> &nbsp;&nbsp;&nbsp;&nbsp; ==&gt; Indicate Marks Not Posted.<br>
+	
+		
+	<br><br>
+	
+	</td>
+  </tr>
+</tbody></table>
+</div>
+</td>
+</tr>
+
+		
+		</tbody></table>
+		
+
+	
+		
+	<br><br>
+	
+	</td>
+  </tr>
+</tbody></table>
+
+</body></html>
